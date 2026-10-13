@@ -25,4 +25,9 @@ public class HomePage {
         clickLink("Dropdown");
         return new DropdownPage(driver);
     }
+    public JavaScriptAlertsPage clickJavaScriptAlertsLink()
+    {
+        clickLink("JavaScript Alerts");
+        return new JavaScriptAlertsPage(driver);
+    }
 }
