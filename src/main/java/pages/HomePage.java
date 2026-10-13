@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomePage {
     //private By formAuthenticationLink=By.linkText("Form Authentication");
@@ -15,7 +14,7 @@ public class HomePage {
         clickLink("Form Authentication");
         return new LoginPage(driver);
     }
-    public void clickLink(String linkText)
+    private void clickLink(String linkText)
     {
         driver.findElement(By.linkText(linkText)).click();
 
@@ -29,5 +28,10 @@ public class HomePage {
     {
         clickLink("JavaScript Alerts");
         return new JavaScriptAlertsPage(driver);
+    }
+    public HoverPage clickHoverLink()
+    {
+        clickLink("Hovers");
+        return new HoverPage(driver);
     }
 }

@@ -19,6 +19,7 @@ public class DropdownPage {
         //dropdown.selectByContainsVisibleText(option);
         getDropdown().selectByVisibleText(option);
     }
+
     public List <String> getSelectedOption(){
         List<WebElement> selectedElements= getDropdown().getAllSelectedOptions();
         List<String> selectedOptions = new ArrayList<>();
