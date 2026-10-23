@@ -16,18 +16,30 @@ public class HoverPage {
     public FigureCaption  hoverOverFigure(int index)
     {
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElements(figureBox).get(index-1)).perform();
-        return new FigureCaption(driver.findElements(figureCaption).get(index-1));
+        WebElement figure = driver.findElements(figureBox).get(index-1);
+        actions.moveToElement(figure).perform();
+        return new FigureCaption(figure.findElement(figureCaption));
     }
     public class FigureCaption {
         private WebElement caption;
+        private By name=By.tagName("h5");
+        private By link=By.tagName("a");
         public FigureCaption(WebElement caption) {
             this.caption = caption;
         }
 
-    public boolean isCaptionDisplayed(int index)
+    public boolean isCaptionDisplayed()
     {
-        return driver.findElements(figureCaption).get(index).isDisplayed();
+        return caption.isDisplayed();
     }
+    public String getName(){
+             return caption.findElement(name).getText();
+    }
+        public String getLinkText(){
+            return caption.findElement(link).getText();
+        }
+        public String getLinkURL(){
+            return caption.findElement(link).getAttribute("href");
+        }
         }
 }

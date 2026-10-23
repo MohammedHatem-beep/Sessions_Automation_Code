@@ -34,4 +34,9 @@ public class HomePage {
         clickLink("Hovers");
         return new HoverPage(driver);
     }
+    public KeyPressesPage clickKeyPressesLink()
+    {
+        clickLink("Key Presses");
+        return new KeyPressesPage(driver);
+    }
 }
