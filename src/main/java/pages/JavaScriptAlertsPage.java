@@ -25,14 +25,15 @@ public class JavaScriptAlertsPage {
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
-    public void getAlertText() {
-        driver.switchTo().alert().getText();
+    public String getAlertText() {
+
+        return driver.switchTo().alert().getText();
     }
     public void dismissConfirm() {
         driver.switchTo().alert().dismiss();
     }
     public void setPromptText(String message) {
-        driver.findElement(promptButton).sendKeys(message);
+        driver.switchTo().alert().sendKeys(message);
     }
     public String getResultMessage() {
         return driver.findElement(resultMessage).getText();
