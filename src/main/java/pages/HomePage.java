@@ -54,4 +54,19 @@ public class HomePage {
         clickLink("Frames");
         return new FramesPage(driver);
     }
+    public DynamicLoadingPage clickDynamicLoadingLink()
+    {
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
+    public LargeAndDeepDomPage clickLargeAndDeepLink()
+    {
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(driver);
+    }
+    public InfiniteScrollPage clickInfiniteScroll()
+    {
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
 }

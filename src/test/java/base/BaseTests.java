@@ -9,7 +9,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.WindowManager;
 
+import java.time.Duration;
 import java.util.List;
 
 public class BaseTests {
@@ -20,6 +22,8 @@ public class BaseTests {
         driver = new ChromeDriver();
         homePage=new HomePage(driver);
         driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
     @BeforeMethod()
@@ -31,5 +35,8 @@ public class BaseTests {
     @AfterClass
     public void tearDown(){
         driver.quit();
+    }
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
     }
 }
